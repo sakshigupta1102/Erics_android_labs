@@ -37,7 +37,7 @@ EditText myet;
         sb= new StringBuilder();
         width = myib.getWidth();
         height = myib.getHeight();
-        sb.append("the width is:"+width+" the height is :"+height);
+       // sb.append("the width is:"+width+" the height is :"+height);
     }
 
     @Override
@@ -113,7 +113,10 @@ EditText myet;
                     sb.append("switch on \n");
                 else
                     sb.append("switch off \n");
+                sb.append("the width is:"+width+" the height is :"+height);
                 Toast.makeText(getApplicationContext(), sb.toString(), Toast.LENGTH_LONG).show();
+                sb.delete(0,sb.length());
+
 
 
             }
