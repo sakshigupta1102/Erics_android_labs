@@ -1,30 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="I AM A TEXTVIEW"
+       android:layout_margin="20dp"
+       android:padding="10dp"
+       android:id="@+id/tv"
+       ></TextView>
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:text="@string/button_message"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"></Button>
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:hint="type your text here"
+        android:id="@+id/et"
+        ></EditText>
+  <Button
+      android:layout_width="wrap_content"
+      android:id="@+id/btn"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="60dp"
+      android:text="click me"
+      android:padding="20dp"
+      ></Button>
 
-    <TextView
+<CheckBox
+    android:id="@+id/cb"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    ></CheckBox>
+
+<Switch
+    android:id="@+id/swt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+></Switch>
+
+    <RadioButton
+        android:id="@+id/rb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+></RadioButton>
 
-        android:text="@string/hello_message"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/appicon"
+android:layout_margin="20dp"
+></ImageView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageButton
+        android:id="@+id/ib"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/appicon"
+        android:layout_margin="20dp"
+        ></ImageButton>
+
+
+</LinearLayout>
