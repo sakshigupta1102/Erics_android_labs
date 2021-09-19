@@ -27,9 +27,19 @@ EditText myet;
     RadioButton  myrb;
     ImageButton myib;
     ImageView myiv;
-    StringBuilder sb = new StringBuilder("");
+    StringBuilder sb ;
     int width;
     int height;
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        sb= new StringBuilder();
+        width = myib.getWidth();
+        height = myib.getHeight();
+        sb.append("the width is:"+width+" the height is :"+height);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,17 +84,17 @@ EditText myet;
 
         });
 
-
-        ViewTreeObserver vto = myib.getViewTreeObserver();
-        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                 width = myib.getWidth();
-                 height = myib.getHeight();
-                sb.append("the width is:"+width+" the height is :"+height);
-
-            }
-        });
+//
+//        ViewTreeObserver vto = myib.getViewTreeObserver();
+//        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+//            @Override
+//            public void onGlobalLayout() {
+//                 width = myib.getWidth();
+//                 height = myib.getHeight();
+//                sb.append("the width is:"+width+" the height is :"+height);
+//
+//            }
+//        });
 
         myib.setOnClickListener(new View.OnClickListener() {
 
@@ -104,6 +114,7 @@ EditText myet;
                 else
                     sb.append("switch off \n");
                 Toast.makeText(getApplicationContext(), sb.toString(), Toast.LENGTH_LONG).show();
+
 
             }
         });
