@@ -27,7 +27,7 @@ EditText myet;
     RadioButton  myrb;
     ImageButton myib;
     ImageView myiv;
-    StringBuilder sb ;
+    StringBuilder sb = new StringBuilder();
     int width;
     int height;
 
