@@ -32,13 +32,16 @@ EditText myet;
 
     int width;
     int height;
-
+    String rbstatus= "off";
+    String cbstatus="off";
+    String swtstatus= "off";
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         sb= new StringBuilder();
         width = myib.getWidth();
         height = myib.getHeight();
+
        // sb.append("the width is:"+width+" the height is :"+height);
     }
 
@@ -81,19 +84,19 @@ EditText myet;
         {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
             {
-                String str=isChecked?"on":"off";
-                Toast.makeText(getApplicationContext(), "radiobutton is "+str,Toast.LENGTH_SHORT ).show();
+                rbstatus=isChecked?"on":"off";
+                Toast.makeText(getApplicationContext(), "radiobutton is "+rbstatus,Toast.LENGTH_SHORT ).show();
             }
         });
 
 
-        
+
         myswt.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
             {
-                String str=isChecked?"on":"off";
-                Toast.makeText(getApplicationContext(), "switch is "+str,Toast.LENGTH_SHORT ).show();
+                swtstatus=isChecked?"on":"off";
+                Toast.makeText(getApplicationContext(), "switch is "+swtstatus,Toast.LENGTH_SHORT ).show();
 
             }
         });
@@ -101,8 +104,8 @@ EditText myet;
         {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
             {
-                String str=isChecked?"on":"off";
-                Toast.makeText(getApplicationContext(), "checkbox is "+str,Toast.LENGTH_SHORT ).show();
+                cbstatus=isChecked?"on":"off";
+                Toast.makeText(getApplicationContext(), "checkbox is "+cbstatus,Toast.LENGTH_SHORT ).show();
 
             }
         });
@@ -111,18 +114,7 @@ EditText myet;
             @Override
             public void onClick(View v) {
 
-                if(mycb.isChecked())
-                    sb.append("checkbox on \n");
-                else
-                    sb.append("checkbox off \n");
-                if(myrb.isChecked())
-                    sb.append("radiobutton on \n");
-                else
-                    sb.append("radiobutton off \n");
-                if(myswt.isChecked())
-                    sb.append("switch on \n");
-                else
-                    sb.append("switch off \n");
+               sb.append("switch  "+swtstatus+"\n"+"checkbox "+ cbstatus+"\n" + "radio button "+rbstatus+"\n");
                 sb.append("the width is:"+width+" the height is :"+height);
                 Toast.makeText(getApplicationContext(), sb.toString(), Toast.LENGTH_LONG).show();
                 sb.delete(0,sb.length());
