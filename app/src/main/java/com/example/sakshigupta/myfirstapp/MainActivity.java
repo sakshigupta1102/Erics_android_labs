@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -28,6 +29,7 @@ EditText myet;
     ImageButton myib;
     ImageView myiv;
     StringBuilder sb = new StringBuilder();
+
     int width;
     int height;
 
@@ -61,28 +63,7 @@ EditText myet;
                 mytv.setText("the text you entered is  "+ textobtained);
             }
         });
-        mycb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"clicked a checkbox",Toast.LENGTH_SHORT).show();
-            }
 
-        });
-
-        myswt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"clicked a switch",Toast.LENGTH_SHORT).show();
-            }
-
-        });
-        myrb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"clicked a radiobutton",Toast.LENGTH_SHORT).show();
-            }
-
-        });
 
 //
 //        ViewTreeObserver vto = myib.getViewTreeObserver();
@@ -96,6 +77,35 @@ EditText myet;
 //            }
 //        });
 
+        myrb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
+                String str=isChecked?"on":"off";
+                Toast.makeText(getApplicationContext(), "radiobutton is "+str,Toast.LENGTH_SHORT ).show();
+            }
+        });
+
+
+        
+        myswt.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
+                String str=isChecked?"on":"off";
+                Toast.makeText(getApplicationContext(), "switch is "+str,Toast.LENGTH_SHORT ).show();
+
+            }
+        });
+        mycb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
+                String str=isChecked?"on":"off";
+                Toast.makeText(getApplicationContext(), "checkbox is "+str,Toast.LENGTH_SHORT ).show();
+
+            }
+        });
         myib.setOnClickListener(new View.OnClickListener() {
 
             @Override
