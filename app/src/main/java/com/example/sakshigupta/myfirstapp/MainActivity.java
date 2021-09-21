@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 EditText myet;
     TextView mytv;
     CheckBox mycb;
@@ -80,49 +80,35 @@ EditText myet;
 //            }
 //        });
 
-        myrb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
-        {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
-            {
-                rbstatus=isChecked?"on":"off";
-                Toast.makeText(getApplicationContext(), "radiobutton is "+rbstatus,Toast.LENGTH_SHORT ).show();
-            }
+        myrb.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            rbstatus=isChecked?"on":"off";
+            Toast.makeText(getApplicationContext(), "radiobutton is "+rbstatus,Toast.LENGTH_SHORT ).show();
         });
 
 
 
-        myswt.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
-        {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
-            {
-                swtstatus=isChecked?"on":"off";
-                Toast.makeText(getApplicationContext(), "switch is "+swtstatus,Toast.LENGTH_SHORT ).show();
+        myswt.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            swtstatus=isChecked?"on":"off";
+            Toast.makeText(getApplicationContext(), "switch is "+swtstatus,Toast.LENGTH_SHORT ).show();
 
-            }
         });
-        mycb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
-        {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
-            {
-                cbstatus=isChecked?"on":"off";
-                Toast.makeText(getApplicationContext(), "checkbox is "+cbstatus,Toast.LENGTH_SHORT ).show();
+        mycb.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            cbstatus=isChecked?"on":"off";
+            Toast.makeText(getApplicationContext(), "checkbox is "+cbstatus,Toast.LENGTH_SHORT ).show();
 
-            }
         });
-        myib.setOnClickListener(new View.OnClickListener() {
+        myib.setOnClickListener((View v)->{
 
-            @Override
-            public void onClick(View v) {
 
                sb.append("switch  "+swtstatus+"\n"+"checkbox "+ cbstatus+"\n" + "radio button "+rbstatus+"\n");
                 sb.append("the width is:"+width+" the height is :"+height);
                 Toast.makeText(getApplicationContext(), sb.toString(), Toast.LENGTH_LONG).show();
                 sb.delete(0,sb.length());
-                //
 
 
 
-            }
+
+
         });
 
 
