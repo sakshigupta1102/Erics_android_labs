@@ -118,6 +118,7 @@ EditText myet;
                 sb.append("the width is:"+width+" the height is :"+height);
                 Toast.makeText(getApplicationContext(), sb.toString(), Toast.LENGTH_LONG).show();
                 sb.delete(0,sb.length());
+                //
 
 
 
